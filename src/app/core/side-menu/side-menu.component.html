@@ -1,0 +1,16 @@
+<section class="side-menu">
+
+  <div class="logo"></div>
+  <div class="content">
+    <h2>Filter Types</h2>
+    <ul>
+      <li *ngFor="let filter of filters" (click)="onFilterChange(filter.value)">
+        <label for="{{filter.value}}">
+          <input type="radio" value="{{filter.value}}" name="filter" id="{{filter.value}}">
+          {{filter.name}}
+        </label>
+      </li>
+    </ul>
+  </div>
+  
+</section>

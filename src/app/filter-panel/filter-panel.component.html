@@ -1,0 +1,37 @@
+<section class="content flex-line-center">
+  <form *ngIf="filterState.filterType" class="flex-line-around" [formGroup]='filterForm' novalidate>
+
+    <mat-form-field *ngIf="filterState.filterType === 'tags'">
+      <mat-select placeholder="Tag" formControlName="event">
+        <mat-option *ngFor="let tag of filterState?.tags" [value]="tag.id">
+          {{ tag.external_id }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input 
+          matInput 
+          formControlName="start_date"
+          [matDatepicker]="picker1" 
+          placeholder="Start Date">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+
+    <mat-form-field>
+        <input 
+          matInput 
+          formControlName="end_date"
+          [matDatepicker]="picker2" 
+          placeholder="End Date">
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+
+  </form>
+  <p *ngIf="!filterState.filterType">
+    please select filter type on the side-menu
+  </p>
+</section>
+  

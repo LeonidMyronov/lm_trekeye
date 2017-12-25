@@ -1,0 +1,44 @@
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css"
+@import helper
+
+trekeye-side-menu, trekeye-header, trekeye-main
+  width: 100%
+
+h1, h2
+  text-transform: uppercase
+
+p
+  margin: 0
+  padding: 0
+
+.side-menu
+  .logo
+    width: 100%
+    height: 150px
+    background-color: mediumslateblue
+  .content
+    h2
+      text-align: center
+    ul
+      @extend .ulli
+      li
+        margin-bottom: 10px
+        label
+          cursor: pointer
+trekeye-header
+  background-color: whitesmoke
+  header
+    text-align: center
+    img
+
+trekeye-filter-panel
+  .content
+    width: 100%
+    height: 80px
+    background-color: lightgray
+
+text.tick.ng-star-inserted
+    display: none
+
+.mat-card
+  margin: 40px 20px

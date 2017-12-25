@@ -1,0 +1,28 @@
+<trekeye-filter-panel></trekeye-filter-panel>
+<div *ngIf="filterState.filterType=='zones'">
+
+  <div class="card-list flex-line-center" *ngIf="filterState.visits !== undefined">
+    <mat-card *ngFor="let zone of filterState.zones">
+      <mat-card-header>
+        <mat-card-title>
+          <h4>{{ zone.name }}</h4>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+
+        <h5>Total visits: {{ zone.visits.total }}</h5>
+        <div *ngFor="let tag of zone.visits.visits">
+          {{tag.name}} - {{tag.value}} visits
+        </div>
+      </mat-card-content>
+      
+    </mat-card>
+  </div>
+  
+</div>
+<div *ngIf="filterState.filterType=='tags' && filterState.moves && filterState.displayChart">
+  
+    <h2> Tag Movement Gantt Chart</h2>
+    <div  [chartData]="gantt_ChartData" [chartOptions]="gantt_chart_options" GanttChart></div>
+
+</div>
